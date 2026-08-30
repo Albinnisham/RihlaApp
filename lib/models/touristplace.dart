@@ -16,4 +16,16 @@ class TouristPlace {
     required this.bestTime,
     required this.activities,
   });
+
+  factory TouristPlace.fromJson(Map<String, dynamic> json) {
+    return TouristPlace(
+      name: json['name'] as String,
+      image: json['image'] as String,
+      location: json['location'] as String,
+      description: json['description'] as String,
+      culture: json['culture'] as String,
+      bestTime: json['bestTime'] as String,
+      activities: List<String>.from(json['activities'] as List),
+    );
+  }
 }
